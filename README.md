@@ -1,3 +1,16 @@
+SAGE: Enhanced Ability and Privacy for Interdisciplinary Course Performance Prediction in Higher Education
+
+This repository contains the PyTorch imploymentation for the SAGE.  If you have any questions on this repository or related paper, feel free to create an issue or send me an email.
+
+Migrate code to the following environment:
+
+Python 3.11
+
+Torch 2.1.1
+
+numpy 1.26.4
+
+Scikit-learn 1.4.2
 
 #### pip
 
@@ -8,7 +21,7 @@ pip install -r requirements.txt
 ```
 
 ## Run 
-The dataset configuration is located at lines 235-236; determine the number of clients at line 222 based on the dataset you wish to run.
+The dataset configuration is located at lines 235-236 in the `client.py` file; determine the number of clients at line 222 based on the dataset you wish to run.
 
 For the public dataset(tsu),  You can start the server in a terminal as follows:
 ```shell
@@ -51,7 +64,7 @@ python client.py --partition-id 2
 ```
 You will see that PyTorch is starting a federated training. 
 
-The personalized layer settings are located within two functions at lines 265 and 330 in the `client.py` file, which need to be configured accordingly, and also modify the model save path at line 246.
+The non-personalized layer settings are located within two functions at lines 265 and 330 in the `client.py` file, which need to be configured accordingly, and also modify the model save path at line 246.
 For example, the content at line 265 of the function should be set to.
 ```
 params_to_upload = {
@@ -72,4 +85,4 @@ and the file save path should be
 model_save_path = os.path.join('model', 'c1', f'client_{partition_id}_round_{config["round"]}.pth')
 ``` 
 
-My code is a modification of this code(https://github.com/adap/flower/tree/main/examples/quickstart-pytorch).
+We will clean and release the code soon.  If you have any question, please feel free to contact me : chenxinyue@stu.sau.edu.cn
